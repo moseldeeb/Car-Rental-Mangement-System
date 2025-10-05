@@ -7,11 +7,8 @@ namespace Car_Rental_Mangement_System
         static void Main(string[] args)
         {
             var rentalSystem = new RentalSystem();
-            var availableVehicles = rentalSystem.ShowAvailableVehicles();
-            var rentals = rentalSystem.ShowRentals();
-
             string choice = "";
-
+             dfge
             while (choice != "5")
             {
                 Console.WriteLine("\nMenu:");
@@ -94,14 +91,18 @@ namespace Car_Rental_Mangement_System
                 // Show available vehicles
                 else if (choice == "2")
                 {
+                    var availableVehicles = rentalSystem.ShowAvailableVehicles();
                     if (!availableVehicles.Any())
                     {
                         Console.WriteLine("\nNo Vehicles available.");
                         continue;
                     }
-                    foreach (var available in rentalSystem.ShowAvailableVehicles())
+                    else
                     {
-                        Console.WriteLine(available.DisplayInfo());
+                        foreach (var available in availableVehicles)
+                        {
+                            Console.WriteLine(available.DisplayInfo());
+                        }
                     }
                 }
 
@@ -109,6 +110,7 @@ namespace Car_Rental_Mangement_System
                 else if (choice == "3")
                 {
                     int selection = 0;
+                    var availableVehicles = rentalSystem.ShowAvailableVehicles();
 
                     if (!availableVehicles.Any())
                     {
@@ -166,6 +168,7 @@ namespace Car_Rental_Mangement_System
                 // Show rentals
                 else if (choice == "4")
                 {
+                    var rentals = rentalSystem.ShowRentals();
                     if (!rentals.Any())
                     {
                         Console.WriteLine("\nNo Rentals yet.");
