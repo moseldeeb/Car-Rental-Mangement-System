@@ -8,7 +8,6 @@ namespace Car_Rental_Mangement_System
         {
             var rentalSystem = new RentalSystem();
             string choice = "";
-             dfge
             while (choice != "5")
             {
                 Console.WriteLine("\nMenu:");
